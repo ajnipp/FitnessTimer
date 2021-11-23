@@ -18,7 +18,7 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(viewModel.timers, id: \.id) { item in
-                        TimerView(restTime: item.restTime)
+                        TimerView()
                     }
                 }
                 .padding()

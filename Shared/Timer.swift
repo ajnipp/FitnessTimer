@@ -9,6 +9,24 @@ import SwiftUI
 
 struct TimerView: View {
     let restTime: Int
+    let startColor: Color
+    let endColor: Color
+    let tileWidth: CGFloat
+    let tileHeight: CGFloat
+    init(rest: Int, color1: Color, color2: Color, width: CGFloat, height: CGFloat){
+        restTime = rest
+        startColor = color1
+        endColor = color2
+        tileWidth = width
+        tileHeight = height
+    }
+    init() {
+        restTime = 90
+        startColor = Color.blue
+        endColor = Color.green
+        tileWidth = 160.0
+        tileHeight = 100.0
+    }
     @State var progressTime = 0
     @State private var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
@@ -31,13 +49,6 @@ struct TimerView: View {
     var seconds: Int {
         progressTime % 60
     }
-    
-    var blueness: Double {
-        1 - colorProgress
-    }
-    var greenness: Double {
-        colorProgress
-    }
     var body: some View {
         Button(action: {
             print(colorProgress)
@@ -45,15 +56,27 @@ struct TimerView: View {
                 progressTime = 0
             }
         },label: {
-            Text("\(String(format: "%02d:%02d:%02d", hours, minutes, seconds))")
-                .foregroundColor(.white)
-                .font(.largeTitle)
-                .frame(width: 150, height: 150)
-                .background(Color(red: 0.0, green: greenness, blue: blueness))
-                .clipShape(RoundedRectangle(cornerRadius: 40))
-                .onReceive(timer) { _ in
-                    progressTime += 1
+            ZStack {
+                Rectangle()
+                    .fill(startColor)
+                    .frame(width: tileWidth, height: tileHeight)
+                    .clipShape(RoundedRectangle(cornerRadius: 40))
+                Rectangle()
+                    .fill(endColor)
+                    .frame(width: tileWidth, height: tileHeight)
+                    .clipShape(RoundedRectangle(cornerRadius: 40))
+                    .opacity(1 - colorProgress)
+                
+                Text("\(String(format: "%02d:%02d:%02d", hours, minutes, seconds))")
+                    .foregroundColor(.white)
+                    .font(.largeTitle)
+                    .frame(width: tileWidth, height: tileHeight)
+                    .background(Color(red: 0, green: 0, blue: 0, opacity: 0))
+                    .clipShape(RoundedRectangle(cornerRadius: 40))
+                    .onReceive(timer) { _ in
+                        progressTime += 1
                 }
+            }
         })
             .padding()
 
@@ -63,6 +86,6 @@ struct TimerView: View {
 
 struct Timer_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(restTime: 90)
+        TimerView()
     }
 }
