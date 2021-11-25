@@ -9,5 +9,6 @@ import Foundation
 
 struct TimerModel {
     let restTime: Int
+    let label: String?
     let id = UUID()
 }

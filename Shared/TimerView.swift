@@ -13,6 +13,7 @@ struct TimerView: View {
     let endColor: Color
     let tileWidth: CGFloat
     let tileHeight: CGFloat
+    
     init(rest: Int, color1: Color, color2: Color, width: CGFloat, height: CGFloat){
         restTime = rest
         startColor = color1
@@ -25,8 +26,9 @@ struct TimerView: View {
         startColor = Color.blue
         endColor = Color.green
         tileWidth = 160.0
-        tileHeight = 100.0
+        tileHeight = 70.0
     }
+    
     @State var progressTime = 0
     @State private var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     

@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16BF28AD274DB827004A708D /* TimerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF28AC274DB827004A708D /* TimerCardView.swift */; };
+		16BF28AE274DB827004A708D /* TimerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF28AC274DB827004A708D /* TimerCardView.swift */; };
 		16DF654D27488CD000134A0D /* FitnessTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF653D27488CCF00134A0D /* FitnessTimerApp.swift */; };
 		16DF654E27488CD000134A0D /* FitnessTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF653D27488CCF00134A0D /* FitnessTimerApp.swift */; };
 		16DF654F27488CD000134A0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF653E27488CCF00134A0D /* ContentView.swift */; };
 		16DF655027488CD000134A0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF653E27488CCF00134A0D /* ContentView.swift */; };
 		16DF655127488CD000134A0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16DF653F27488CD000134A0D /* Assets.xcassets */; };
 		16DF655227488CD000134A0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16DF653F27488CD000134A0D /* Assets.xcassets */; };
-		16DF655C27488D7A00134A0D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF655B27488D7A00134A0D /* Timer.swift */; };
-		16DF655D27488D7A00134A0D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF655B27488D7A00134A0D /* Timer.swift */; };
+		16DF655C27488D7A00134A0D /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF655B27488D7A00134A0D /* TimerView.swift */; };
+		16DF655D27488D7A00134A0D /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF655B27488D7A00134A0D /* TimerView.swift */; };
 		16DF655F27498F0900134A0D /* TimersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF655E27498F0900134A0D /* TimersViewModel.swift */; };
 		16DF656027498F0900134A0D /* TimersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF655E27498F0900134A0D /* TimersViewModel.swift */; };
 		16DF656227498F5400134A0D /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF656127498F5400134A0D /* TimerModel.swift */; };
@@ -22,13 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16BF28AC274DB827004A708D /* TimerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCardView.swift; sourceTree = "<group>"; };
 		16DF653D27488CCF00134A0D /* FitnessTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTimerApp.swift; sourceTree = "<group>"; };
 		16DF653E27488CCF00134A0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		16DF653F27488CD000134A0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16DF654427488CD000134A0D /* FitnessTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DF654A27488CD000134A0D /* FitnessTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DF654C27488CD000134A0D /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		16DF655B27488D7A00134A0D /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		16DF655B27488D7A00134A0D /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		16DF655E27498F0900134A0D /* TimersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersViewModel.swift; sourceTree = "<group>"; };
 		16DF656127498F5400134A0D /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				16DF653D27488CCF00134A0D /* FitnessTimerApp.swift */,
-				16DF655B27488D7A00134A0D /* Timer.swift */,
+				16BF28AC274DB827004A708D /* TimerCardView.swift */,
+				16DF655B27488D7A00134A0D /* TimerView.swift */,
 				16DF653E27488CCF00134A0D /* ContentView.swift */,
 				16DF655E27498F0900134A0D /* TimersViewModel.swift */,
 				16DF656127498F5400134A0D /* TimerModel.swift */,
@@ -189,9 +193,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				16DF655F27498F0900134A0D /* TimersViewModel.swift in Sources */,
-				16DF655C27488D7A00134A0D /* Timer.swift in Sources */,
+				16DF655C27488D7A00134A0D /* TimerView.swift in Sources */,
 				16DF656227498F5400134A0D /* TimerModel.swift in Sources */,
 				16DF654F27488CD000134A0D /* ContentView.swift in Sources */,
+				16BF28AD274DB827004A708D /* TimerCardView.swift in Sources */,
 				16DF654D27488CD000134A0D /* FitnessTimerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,9 +206,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				16DF656027498F0900134A0D /* TimersViewModel.swift in Sources */,
-				16DF655D27488D7A00134A0D /* Timer.swift in Sources */,
+				16DF655D27488D7A00134A0D /* TimerView.swift in Sources */,
 				16DF656327498F5400134A0D /* TimerModel.swift in Sources */,
 				16DF655027488CD000134A0D /* ContentView.swift in Sources */,
+				16BF28AE274DB827004A708D /* TimerCardView.swift in Sources */,
 				16DF654E27488CD000134A0D /* FitnessTimerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
