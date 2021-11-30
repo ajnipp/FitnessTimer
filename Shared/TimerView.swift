@@ -28,6 +28,13 @@ struct TimerView: View {
         tileWidth = 160.0
         tileHeight = 70.0
     }
+    init(model: TimerModel) {
+        restTime = model.restTime
+        startColor = model.startColor
+        endColor = model.endColor
+        tileWidth = 160.0
+        tileHeight = 70.0
+    }
     
     @State var progressTime = 0
     @State private var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()

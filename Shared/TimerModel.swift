@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct TimerModel {
     let restTime: Int
-    let label: String?
-    let id = UUID()
+    let startColor: Color
+    let endColor: Color
 }

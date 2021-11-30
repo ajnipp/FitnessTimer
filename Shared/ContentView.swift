@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingSheet = false
-    @StateObject var viewModel = TimersViewModel()
+    @StateObject var viewModel = TimerCardsViewModel()
     let columns = [
         GridItem(.adaptive(minimum: 160))
     ]
@@ -18,8 +18,8 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 0) {
-                    ForEach(viewModel.timers, id: \.id) { item in
-                        TimerCardView(label: nil, timer: TimerView())
+                    ForEach(viewModel.timerCards, id: \.id) { item in
+                        TimerCardView(model: item)
                     }
                 }
                 //                .padding()
@@ -42,16 +42,24 @@ struct ContentView: View {
     }
 }
 
+// TODO: Add hours, minutes, seconds pickers and their respective variables. Then add a method that computes the seconds value of the timer.
+
 struct AddButtonSheetView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var viewModel: TimersViewModel
-    @State var label: String = ""
+    @StateObject var viewModel: TimerCardsViewModel
+    @State var label = ""
+    @State var restTime = 90
+    @State var startColor = Color.blue
+    @State var endColor = Color.green
 
     var body: some View {
         VStack {
             TextField("Timer title", text: $label)
+            
+            ColorPicker("Set the start color", selection: $startColor, supportsOpacity: false)
+            ColorPicker("Set the end color", selection: $endColor, supportsOpacity: false)
             Button("Confirm") {
-                viewModel.addTimer(timer: TimerModel(restTime: 90, label: label))
+                viewModel.addTimerCard(timerCard: TimerCardModel(timer: TimerModel(restTime: 90, startColor: startColor, endColor: endColor), label: label))
                 dismiss()
             }
             .font(.title)
@@ -62,45 +70,6 @@ struct AddButtonSheetView: View {
     }
 }
 
-enum TimerColor {
-    case red, blue, green, white, black
-    
-    func toString() -> String {
-        switch self {
-        case .red:
-            return "Red"
-        case .blue:
-            return "Blue"
-        case .green:
-            return "Green"
-        case .white:
-            return "White"
-        case .black:
-            return "Black"
-        }
-    }
-    func getColor() -> Color {
-        switch self {
-        case .red:
-            return Color.red
-            
-        case .blue:
-            return Color.blue
-            
-        case .green:
-            return Color.green
-            
-        case .white:
-            return Color.white
-            
-        case .black:
-            return Color.black
-            
-        }
-    }
-    
-    
-}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

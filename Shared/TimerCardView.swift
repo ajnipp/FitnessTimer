@@ -7,14 +7,19 @@
 
 import SwiftUI
 
+// TODO: Add some kind of indicator that the time is up (Maybe make it shake with an animation, add an icon (bell?)
 struct TimerCardView: View {
-    let label: String?
-    let timer: TimerView
+    let label: String
+    let timerView: TimerView
+    init(model: TimerCardModel) {
+        timerView = TimerView(model: model.timer)
+        self.label = model.label ?? " "
+    }
     var height: CGFloat {
-        timer.tileHeight + 140.0
+        timerView.tileHeight + 140.0
     }
     var width: CGFloat {
-        timer.tileWidth + 40.0
+        timerView.tileWidth + 40.0
     }
     var body: some View {
         ZStack{
@@ -23,9 +28,9 @@ struct TimerCardView: View {
                 .frame(width: width, height: height)
                 .clipShape(RoundedRectangle(cornerRadius: 40))
             VStack{
-                Text(label ?? " ")
+                Text(label)
                     .font(.title2)
-                timer
+                timerView
                 
                 Spacer()
                     .frame(width: 1, height: 30)
@@ -40,6 +45,6 @@ struct TimerCardView: View {
 
 struct TimerCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerCardView(label: "Example", timer: TimerView())
+        TimerCardView(model: TimerCardModel(timer: TimerModel(restTime: 90, startColor: Color.green, endColor: Color.blue), label: nil))
     }
 }

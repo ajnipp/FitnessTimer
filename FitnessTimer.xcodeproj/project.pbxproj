@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		168D8A2E2755CB7700818FBF /* TimerCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168D8A2D2755CB7700818FBF /* TimerCardModel.swift */; };
+		168D8A2F2755CB7700818FBF /* TimerCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168D8A2D2755CB7700818FBF /* TimerCardModel.swift */; };
 		16BF28AD274DB827004A708D /* TimerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF28AC274DB827004A708D /* TimerCardView.swift */; };
 		16BF28AE274DB827004A708D /* TimerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF28AC274DB827004A708D /* TimerCardView.swift */; };
 		16DF654D27488CD000134A0D /* FitnessTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF653D27488CCF00134A0D /* FitnessTimerApp.swift */; };
@@ -24,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		168D8A2D2755CB7700818FBF /* TimerCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCardModel.swift; sourceTree = "<group>"; };
 		16BF28AC274DB827004A708D /* TimerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCardView.swift; sourceTree = "<group>"; };
 		16DF653D27488CCF00134A0D /* FitnessTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTimerApp.swift; sourceTree = "<group>"; };
 		16DF653E27488CCF00134A0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 				16DF653E27488CCF00134A0D /* ContentView.swift */,
 				16DF655E27498F0900134A0D /* TimersViewModel.swift */,
 				16DF656127498F5400134A0D /* TimerModel.swift */,
+				168D8A2D2755CB7700818FBF /* TimerCardModel.swift */,
 				16DF653F27488CD000134A0D /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -198,6 +202,7 @@
 				16DF654F27488CD000134A0D /* ContentView.swift in Sources */,
 				16BF28AD274DB827004A708D /* TimerCardView.swift in Sources */,
 				16DF654D27488CD000134A0D /* FitnessTimerApp.swift in Sources */,
+				168D8A2E2755CB7700818FBF /* TimerCardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +216,7 @@
 				16DF655027488CD000134A0D /* ContentView.swift in Sources */,
 				16BF28AE274DB827004A708D /* TimerCardView.swift in Sources */,
 				16DF654E27488CD000134A0D /* FitnessTimerApp.swift in Sources */,
+				168D8A2F2755CB7700818FBF /* TimerCardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
-class TimersViewModel: ObservableObject {
-    @Published var timers: [TimerModel]
+class TimerCardsViewModel: ObservableObject {
+    @Published var timerCards: [TimerCardModel]
     init() {
-        timers = [TimerModel(restTime: 90, label: "Example")]
+        timerCards = [TimerCardModel(timer: TimerModel(restTime: 90, startColor: Color.green, endColor: Color.blue), label: "Example")]
     }
-    func addTimer(timer: TimerModel) {
-        timers.append(timer)
+    func addTimerCard(timerCard: TimerCardModel) {
+        timerCards.append(timerCard)
     }
 }
