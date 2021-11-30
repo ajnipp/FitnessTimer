@@ -14,6 +14,7 @@ struct TimerView: View {
     let tileWidth: CGFloat
     let tileHeight: CGFloat
     
+    
     init(rest: Int, color1: Color, color2: Color, width: CGFloat, height: CGFloat){
         restTime = rest
         startColor = color1
@@ -38,6 +39,7 @@ struct TimerView: View {
     
     @State var progressTime = 0
     @State private var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    @State private var animationAmount = 0.0
     
     var colorProgress: Double {
         if progressTime == 0 {
@@ -58,9 +60,13 @@ struct TimerView: View {
     var seconds: Int {
         progressTime % 60
     }
+    var isDoneAnimation: Bool {
+        progressTime > restTime
+    }
     var body: some View {
         Button(action: {
             print(colorProgress)
+            animationAmount = 0.0
             withAnimation(.default) {
                 progressTime = 0
             }
@@ -84,12 +90,19 @@ struct TimerView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 40))
                     .onReceive(timer) { _ in
                         progressTime += 1
-                }
+                        if isDoneAnimation {
+                            animationAmount = 5.0
+                        }
+                    }
             }
         })
+            .offset(y: animationAmount)
+            .animation(.default
+                        .repeatForever(autoreverses: false), value: animationAmount
+            )
             .padding()
-
-
+        
+        
     }
 }
 
