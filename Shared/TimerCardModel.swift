@@ -9,6 +9,6 @@ import Foundation
 
 struct TimerCardModel {
     let timer: TimerModel
-    let label: String?
+    let label: String
     let id = UUID()
 }

@@ -67,11 +67,11 @@ struct TimerView: View {
         },label: {
             ZStack {
                 Rectangle()
-                    .fill(startColor)
+                    .fill(endColor)
                     .frame(width: tileWidth, height: tileHeight)
                     .clipShape(RoundedRectangle(cornerRadius: 40))
                 Rectangle()
-                    .fill(endColor)
+                    .fill(startColor)
                     .frame(width: tileWidth, height: tileHeight)
                     .clipShape(RoundedRectangle(cornerRadius: 40))
                     .opacity(1 - colorProgress)

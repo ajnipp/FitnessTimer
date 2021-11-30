@@ -13,7 +13,7 @@ struct TimerCardView: View {
     let timerView: TimerView
     init(model: TimerCardModel) {
         timerView = TimerView(model: model.timer)
-        self.label = model.label ?? " "
+        self.label = ((model.label == "") ? " ": model.label)
     }
     var height: CGFloat {
         timerView.tileHeight + 140.0
@@ -38,13 +38,15 @@ struct TimerCardView: View {
             .frame(width: width, height: height)
             
         }
-        .frame(width: width, height: height)
+        .frame(maxWidth: width, maxHeight: height)
+//        .frame(width: width, height: height)
         .padding()
+        .frame(maxWidth: width, maxHeight: height)
     }
 }
 
 struct TimerCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerCardView(model: TimerCardModel(timer: TimerModel(restTime: 90, startColor: Color.green, endColor: Color.blue), label: nil))
+        TimerCardView(model: TimerCardModel(timer: TimerModel(restTime: 90, startColor: Color.green, endColor: Color.blue), label: ""))
     }
 }
